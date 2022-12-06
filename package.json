@@ -4,7 +4,17 @@
   "description": "",
   "main": "getData.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node getData.js",
+    "test": "node test.js",
+    "snapshot": "node --snapshot-blob snapshot.blob --build-snapshot snapshot.js name home",
+    "snapshot:run": "node --snapshot-blob snapshot.blob snap.js",
+    "snapshot:run:verify": "node snap.js",
+    "snapshot2": "node --snapshot-blob second_snapshot.blob --build-snapshot second_snapshot.js name home",
+    "snapshot2:run": "node --snapshot-blob second_snapshot.blob",
+    "watch": "nodemon --watch . --exec \"npm run start\"",
+    "watch-node": "node --watch getData.js",
+    "http-keep-alive": "node checkHttpAlive.js",
+    "v8-version": "npm version"
   },
   "type": "module",
   "engines": {
@@ -12,5 +22,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
